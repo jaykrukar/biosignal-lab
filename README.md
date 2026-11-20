@@ -1,5 +1,7 @@
 # BioSignal Lab
 
+[![Tests](https://github.com/jaykrukar/biosignal-lab/actions/workflows/tests.yml/badge.svg)](https://github.com/jaykrukar/biosignal-lab/actions/workflows/tests.yml)
+
 Reproducible **synthetic** biomedical-style waveform classification using Python, SciPy, and scikit-learn. Focus: data generation, feature extraction, patient/subject-aware splits, explicit metrics, and tests.
 
 > **Scope:** This repository does **not** process real ECG/EEG recordings and is **not** a medical device, clinical classifier, or validated PhysioNet submission. Pulse-like signals are artificial and intentionally simplified.
