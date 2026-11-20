@@ -1,0 +1,33 @@
+{
+  "dataset": "synthetic pulse simulation (NOT actual medical data)",
+  "seed": 17,
+  "n_segments": 360,
+  "n_train": 264,
+  "n_test": 96,
+  "train_subject_count": 22,
+  "test_subject_count": 8,
+  "subject_overlap_count": 0,
+  "accuracy": 0.9792,
+  "macro_f1": 0.9787,
+  "confusion_matrix_labels_0_1": [
+    [
+      40,
+      1
+    ],
+    [
+      1,
+      54
+    ]
+  ],
+  "features": [
+    "mean",
+    "std",
+    "rms",
+    "mean_abs_diff",
+    "peak_count",
+    "rr_mean",
+    "rr_std",
+    "spectral_high_ratio"
+  ],
+  "note": "Demo performance on synthetic data cannot establish clinical utility."
+}
