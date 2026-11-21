@@ -26,12 +26,15 @@ Actual generated example report: [docs/demo_report.json](docs/demo_report.json).
 2. Extract finite waveform statistics and inter-peak features.
 3. Split by **subject ID**, not individual segment, using `GroupShuffleSplit`.
 4. Fit a modest `RandomForestClassifier` on training subjects only.
-5. Measure held-out accuracy, macro F1, and confusion matrix.
+5. Measure held-out accuracy, macro F1, Brier score, and confusion matrix.
 6. Assert that training and test subject IDs never overlap.
+7. Estimate percentile intervals by bootstrapping held-out subjects as clusters, keeping each subject's segments together.
 
 ### Why group-aware validation?
 
 Segments from the same person can share subject-specific patterns. Randomly splitting segments would leak this identity signal, inflating evaluation scores. This demo uses explicitly simulated subjects to exercise the correct pattern.
+
+The interval resamples the small held-out set of simulated subjects 1,000 times. Its bounds are reproducible for a fixed seed, but are illustrative only: synthetic records and few subjects cannot support clinical uncertainty estimates. The Brier score is a probability error summary, not evidence of clinical calibration.
 
 ## Structure
 

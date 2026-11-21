@@ -44,3 +44,10 @@ def test_no_group_leakage_and_repeatable_metrics():
     assert first.report["subject_overlap_count"] == 0
     assert first.report["n_train"] + first.report["n_test"] == 360
     assert 0 <= first.report["macro_f1"] <= 1
+    assert 0 <= first.report["brier_score"] <= 1
+    assert first.report["subject_cluster_bootstrap_95_percent_ci"] == second.report[
+        "subject_cluster_bootstrap_95_percent_ci"
+    ]
+    assert first.report["bootstrap_replicates"] == 1000
+    for interval in first.report["subject_cluster_bootstrap_95_percent_ci"].values():
+        assert 0 <= interval["lower"] <= interval["upper"] <= 1

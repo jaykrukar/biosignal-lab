@@ -9,6 +9,19 @@
   "subject_overlap_count": 0,
   "accuracy": 0.9792,
   "macro_f1": 0.9787,
+  "brier_score": 0.0208,
+  "subject_cluster_bootstrap_95_percent_ci": {
+    "accuracy": {
+      "lower": 0.9479,
+      "upper": 1.0
+    },
+    "macro_f1": {
+      "lower": 0.9475,
+      "upper": 1.0
+    }
+  },
+  "bootstrap_resampling_unit": "held-out subject (all that subject's segments travel together)",
+  "bootstrap_replicates": 1000,
   "confusion_matrix_labels_0_1": [
     [
       40,
@@ -29,5 +42,5 @@
     "rr_std",
     "spectral_high_ratio"
   ],
-  "note": "Demo performance on synthetic data cannot establish clinical utility."
+  "note": "Synthetic demonstration only. Subject-cluster bootstrap intervals use a small held-out cohort and are illustrative, not clinical evidence."
 }
